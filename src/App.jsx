@@ -1,35 +1,58 @@
 import { useState } from 'react'
+import RestaurantCard from './Components/RestaurantCard.jsx';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ padding: '20px', background: '#f5f5f5', minHeight: '100vh' }}>
+      <RestaurantCard
+        title="El Tenedor Dorado"
+        rating={4.8}
+        cocina="Gastronomía moderna"
+        priceLevel="$$$$"
+        description="Gastronomía Elegante en el Corazón de la Ciudad."
+        address="Calle Miguel Dasso 155, San Isidro"
+        postalCode="15073"
+        schedule={{
+          weekdays: "Lun - Vie   5:00 PM - 11:00 PM",
+          weekend: "Sáb - Dom   4:00 PM - 12:00 AM"
+        }}
+        imageUrl="https://www.revistadeck.com/wp-content/uploads/Osaka-10.jpg"
+      />
+
+      <RestaurantCard
+        title="La Mesa de Zafiro"
+        rating={4.8}
+        cocina="Gastronomía moderna"
+        priceLevel="$$$$"
+        description="Cocina de autor inspirada en la ciudad."
+        address="Calle Miguel Dasso 155, San Isidro"
+        postalCode="15073"
+        schedule={{
+          weekdays: "Lun - Vie   5:00 PM - 11:00 PM",
+          weekend: "Sáb - Dom   4:00 PM - 12:00 AM"
+        }}
+        imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpsod4cXct7bWTLECyAbZuOgOvIcFWAc0gUQ&s"
+        isOpen={true}
+      />
+
+      <RestaurantCard
+        title="La Casa Gourmet"
+        rating={4.8}
+        cocina="Gastronomía moderna"
+        priceLevel="$$$$"
+        description="Gastronomía Elegante en el Corazón de la Ciudad."
+        address="Calle Don Jode 355, San Borja"
+        postalCode="15073"
+        schedule={{
+          weekdays: "Lun - Vie   5:00 PM - 11:00 PM",
+          weekend: "Sáb - Dom   4:00 PM - 12:00 AM"
+        }}
+        imageUrl="https://static.where-e.com/Italy/La-Maison-Du-Gourmet_03190cd3831daf167b59a3f5b0c11f04.jpg"
+      />
+    </div>
+  );
 }
 
 export default App
